@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
 import './style.css'
 import eventos from './eventos.vue'
+import contador from './contador.vue'
 
-createApp(eventos).mount('#app')
+createApp(contador).mount('#app')
