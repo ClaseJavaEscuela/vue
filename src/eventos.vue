@@ -26,6 +26,4 @@
 
 /**
  * v:bind nos sirve para modificar los atributos de los elementos html
-
-
  */

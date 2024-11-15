@@ -3,7 +3,11 @@
 
     <h1> Contador</h1 >
     <div class="info">
-      <div v-bind:class="clase" class="valor">{{ contador }}</div>
+      <!-- 
+        podemos pasar condiciones en dentro de los v-bind como se nuestra
+        en el ejemplo
+      --->
+      <div v-bind:class="contador >= 0?'positivo':'negativo'" class="valor">{{ contador }}</div>
       <div class="cont-botones d-flex gap-5">
         <button class="btn btn-primary" @click="handleIncrementar">+1</button>
         <button class="btn btn-danger" @click="handleResetear">resetear</button>
@@ -46,17 +50,14 @@
 
   const handleIncrementar = ()=>{
     contador.value ++;
-    clase.value = validarValor()
   }
 
   const handleDecremetar =()=>{
     contador.value --;
-    clase.value = validarValor()
   }
 
   const handleResetear = ()=>{
     contador.value = 0;
-    clase.value = validarValor()
   }
 
 
