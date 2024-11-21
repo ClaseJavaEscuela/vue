@@ -4,7 +4,7 @@
 </script>
 
 <template>
-  <div class="w-[100vw]">
+  <div class='w-[100vw]'>
     <Nav/>
     <Contador/>
   </div>

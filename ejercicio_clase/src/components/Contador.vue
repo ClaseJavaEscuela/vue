@@ -1,8 +1,14 @@
 <script setup>
-import {ref} from 'vue';
+import {ref, computed} from 'vue';
 
   const valoresAgregados = ref([]);
   const valor = ref(0);
+  const valorExistente = computed(()=>{
+    const valores = [...valoresAgregados.value];
+    return valores.find((value) => value==valor.value)?true:false
+  });
+
+
   const handleIncrement = ()=>{
     valor.value += 1;
   }
@@ -27,7 +33,7 @@ import {ref} from 'vue';
     w-[80vw] m-auto flex flex-col items-center h-[80vh]
     gap-5
   '>
-    <div class='bg-[#f5f4f4] w-1/2 mt-5 flex flex-col items-center gap-5 pb-5'>
+    <div class='bg-[#f5f4f4] rounded-md w-1/2 mt-5 flex flex-col items-center gap-5 pb-5'>
       <div class='
         w-full flex justify-center items-center h-[100px]
         font-bold
@@ -41,16 +47,16 @@ import {ref} from 'vue';
         <button class='bg-[#ec8c1d] w-1/4 rounded-md'@click='handleDecrement'>-</button>
       </div>
       <div>
-        <button @click='agregarValor' class="w-72 text-white font-bold p-1 rounded-md bg-black">Agregar</button>
+        <button :disabled="valorExistente" @click='agregarValor' class='w-72 text-white font-bold p-1 rounded-md bg-black'>Agregar</button>
       </div>
     </div>
 
     <div class='w-1/2'>
-      <h2 class="text-center font-bold text-2xl">Lista de valores</h2>
-      <template v-for="(valor,index) in valoresAgregados" :key="key">
+      <h2 class='text-center font-bold text-2xl'>Lista de valores</h2>
+      <template v-for='(valor,index) in valoresAgregados' :key='key'>
         <div class='w-full flex justify-between'>
-          <span class="font-semibold text-lg">valor</span>
-          <span class="text-[#ec8c1d] font-bold">{{ valor }}</span>
+          <span class='font-semibold text-lg'>valor</span>
+          <span class='text-[#ec8c1d] font-bold'>{{ valor }}</span>
         </div>
 
       </template>
