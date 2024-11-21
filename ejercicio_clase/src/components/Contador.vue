@@ -5,7 +5,7 @@ import {ref, computed} from 'vue';
   const valor = ref(0);
   const valorExistente = computed(()=>{
     const valores = [...valoresAgregados.value];
-    return valores.find((value) => value==valor.value)?true:false
+    return valores.indexOf(valor.value)>-1?true:false
   });
 
 
