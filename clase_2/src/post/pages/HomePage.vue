@@ -5,10 +5,11 @@
   const allPost = ref([]);
 
   getPost().then(res => allPost.value = res);
+  /*FORMA DEL PROFE
   fetch('https://jsonplaceholder.typicode.com/posts')
     .then(res => res.json())
     .then(data => allPost.value = data)
-    
+    */
   
 </script>
 
