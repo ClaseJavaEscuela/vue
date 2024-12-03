@@ -1,10 +1,18 @@
 <script setup>
-
+  import { RouterLink, RouterView } from 'vue-router';
 </script>
 
 <template>
-  <div class="w-full">
-     <p>hola</p>
+  <ul class="flex gap-5">
+    <RouterLink to="/phones">phone</RouterLink>
+    <RouterLink to="/">HOME</RouterLink>
+    <RouterLink to="/tv">TV</RouterLink>
+    <RouterLink to="/post">POST</RouterLink>
+    <RouterLink to="/movie">Movie</RouterLink>
+
+  </ul>
+  <div>
+    <RouterView></RouterView>
   </div>
 </template>
 

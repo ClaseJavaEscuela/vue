@@ -4,7 +4,7 @@ import HomePages from '../HomePage.vue';
 
 
 
-export default router = createRouter({
+const router = createRouter({
 
   history: createWebHistory(import.meta.env.BASE_URL),
   routes:[
@@ -12,11 +12,32 @@ export default router = createRouter({
       path:"/",
       name:"Home",
       component: HomePages
+    },
+    {
+      path:"/movie",
+      name:"movie",
+      component:()=> import('../movies/moviesPages.vue')
+    },
+    {
+      path:"/phones",
+      name:"phones",
+      component: ()=> import('../phone/PhonePages.vue')
+    },
+    {
+      path:"/post",
+      name:"post",
+      component:()=> import('../posts/PostPage.vue')
+    },
+    {
+      path:"/tv",
+      name:"tv",
+      component:()=> import('../tv/TvPage.vue')
     }
+
   ]
 
 });
 
 
 
-
+export default router;
