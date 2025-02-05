@@ -32,9 +32,9 @@ import HomePage from './post/pages/HomePage.vue';
 </script>
 
 <template>
-  <div class='w-[100vw]'>
+  <div class='w-[90vw]'>
     <Nav/>
-    <HomePage/>
+    <HomePage class="w-full"/>
   </div>
 </template>
 

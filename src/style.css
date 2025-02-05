@@ -1,42 +1,34 @@
-body{
-  background-color: #000;
-  color: #fff;
-  font-family: sans-serif;
-}
-h1{
-  font-size: 5rem;
-}
-.cont{
-  flex-direction: column;
-  align-items: center;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
-.info{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem ;
-  
+
+.cont::-webkit-scrollbar-track {
+  border-radius: 10px;  
 }
-.valor{
-  font-size: 5rem;
-  background: #070707;
-  width: 100%;
-  text-align: center;
+.contenedor::-webkit-scrollbar{
+  -webkit-appearance: none;
 }
 
-button{
-  width: 150px;
-  height: 50px;
-  
-}
-.neutro{
-  color: #006b7e;
+.contenedor::-webkit-scrollbar:vertical{
+  width:5px;
 }
 
-.positivo{
-  color: rgb(9, 255, 0);
+.contenedor::-webkit-scrollbar-thumb{
+  border-radius: 20px;
+  border: 1px solid #fff;
 }
-.negativo{
-  color: #f00;
+
+.contenedor::-webkit-scrollbar-track{
+  border-radius: 10px;  
+}
+
+.contenedor::-webkit-scrollbar:horizontal {
+  height: 5px;
 }

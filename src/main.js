@@ -1,7 +1,6 @@
 import { createApp } from 'vue'
+import routes from './routes/router.api';
 import './style.css'
-import eventos from './eventos.vue'
-import contador from './contador.vue'
-import valoresComputados from './valoresComputados.vue'
+import App from './App.vue'
 
-createApp(valoresComputados).mount('#app')
+createApp(App).use(routes).mount('#app')

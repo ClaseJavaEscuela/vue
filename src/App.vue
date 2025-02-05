@@ -1,51 +1,29 @@
-<template>
-  <div class="container-fluid">
-    <ul class="list-group">
-      <template v-for="producto in productos" :key="producto.id">
-        <li>{{ producto.nombre }}</li>
-      </template>
-    </ul>
-  </div>
-
-
-
-</template>
-
 <script setup>
-
-const productos = [
-  {
-    id: 1,
-    nombre: "Laptop",
-    precio: 899.99,
-    cantidad: 5
-  },
-  {
-    id: 2,
-    nombre: "Teléfono Móvil",
-    precio: 499.99,
-    cantidad: 10
-  },
-  {
-    id: 3,
-    nombre: "Auriculares Inalámbricos",
-    precio: 199.99,
-    cantidad: 15
-  },
-  {
-    id: 4,
-    nombre: "Teclado Mecánico",
-    precio: 89.99,
-    cantidad: 20
-  },
-  {
-    id: 5,
-    nombre: "Monitor LED",
-    precio: 299.99,
-    cantidad: 8
-  }
-];
+  import{RouterView} from 'vue-router';
+  import HeaderPage from "./components/layout/HeaderPage.vue"
 
 </script>
 
-<style scoped></style>
+<template>
+  <div class="h-[100vh] max-w-full relative">
+    <HeaderPage></HeaderPage>
+    <RouterView class="pb-20" >
+    </RouterView>
+  </div>
+    
+</template>
+
+<style scoped>
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.vue:hover {
+  filter: drop-shadow(0 0 2em #42b883aa);
+}
+</style>
